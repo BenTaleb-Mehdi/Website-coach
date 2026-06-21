@@ -33,7 +33,7 @@ export default function ServicesSection() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.12, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: index * 0.12, duration: 0.5, ease: "easeOut" }}
             className="relative p-7 rounded-3xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 flex flex-col justify-between hover:border-[#82FF00]/30 transition-all duration-300 group shadow-lg dark:shadow-xl hover:shadow-[#82FF00]/5 overflow-hidden"
           >
             {/* Subtle glow on hover */}
