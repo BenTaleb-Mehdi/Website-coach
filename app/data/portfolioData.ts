@@ -104,7 +104,7 @@ export const howWeWorkSteps = [
 // This ensures your Footer compiles properly as well!
 export const contactData = {
   email: "saadbouharrat650@gmail.com",
-  phone: "+212 630829654",
+  phone: "+212 600000000",
   location: "Larache, Morocco",
   socials: {
     instagram: "https://www.instagram.com/saadbouharrat1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
