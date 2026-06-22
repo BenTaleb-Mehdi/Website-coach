@@ -1,4 +1,3 @@
-// components/sections/ContactSection.tsx
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -30,7 +29,6 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Construct the WhatsApp message details
     const message = `Hello ${siteConfig.coachName}! I want to join the team. Here are my application details:\n\n` +
       `• Name: ${formData.name}\n` +
       `• Email: ${formData.email}\n` +
@@ -41,16 +39,15 @@ export default function ContactSection() {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
     
-    // Open in a new tab/window
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <section className="bg-transparent text-zinc-900 dark:text-white px-5 md:px-8 max-w-7xl mx-auto py-16 md:py-24 border-t border-zinc-200 dark:border-zinc-900/60">
-      <div className="grid lg:grid-cols-12 gap-8 md:gap-12 items-start">
+    <section className="bg-transparent text-zinc-900 dark:text-white px-5 md:px-8 max-w-7xl lg:w-full mx-auto py-16 md:py-24 border-t border-zinc-200 dark:border-zinc-900/60">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start w-full">
         
         {/* Left Column: Direct Gateways */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-6 w-full">
           <div className="space-y-2">
             <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">
               Application Portal
@@ -63,36 +60,40 @@ export default function ContactSection() {
             </p>
           </div>
 
-          <div className="grid gap-3.5 pt-2">
-            {/* Telegram Contact Card */}
+          <div className="grid gap-3.5 pt-2 w-full">
+            {/* Phone Contact Card */}
             <a 
-              href={`tel:${contactData.phone}`}
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md"
+              href={`tel:${cleanPhone}`}
+              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md w-full min-w-0"
             >
               <div className="w-10 h-10 rounded-xl bg-[#82FF00]/10 flex items-center justify-center text-[#82FF00] font-black flex-shrink-0 group-hover:scale-110 transition-transform">
                <LucidePhoneCall size={17} className="text-[#82FF00]"/>
               </div>
-              <div>
-                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Call me</div>
-                <div className="text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors">Phone number</div>
+              <div className="min-w-0 flex-1">
+                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Call me direct</div>
+                {/* FIXED: Replaced static text with actual phone layout */}
+                <div className="text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors truncate">
+                  {contactData.phone}
+                </div>
               </div>
             </a>
 
             {/* Email Contact Card */}
             <a 
               href={`mailto:${contactData.email}`} 
-              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md"
+              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md w-full min-w-0"
             >
               <div className="w-10 h-10 rounded-xl bg-[#82FF00]/10 flex items-center justify-center text-[#82FF00] font-black flex-shrink-0 group-hover:scale-110 transition-transform">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Send Direct Query</div>
-                <div className="text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors">{contactData.email}</div>
+                {/* FIXED: Added break-all to avoid layout breakage on tiny screens */}
+                <div className="text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors break-all">
+                  {contactData.email}
+                </div>
               </div>
             </a>
 
@@ -101,7 +102,7 @@ export default function ContactSection() {
               href={contactData.socials.instagram} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md"
+              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md w-full min-w-0"
             >
               <div className="w-10 h-10 rounded-xl bg-[#82FF00]/10 flex items-center justify-center text-[#82FF00] font-black flex-shrink-0 group-hover:scale-110 transition-transform">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -109,28 +110,30 @@ export default function ContactSection() {
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/>
                 </svg>
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Follow Updates</div>
-                <div className="text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors">{contactData.socials.instagram}</div>
+                {/* FIXED: Replaced raw long URL layout text with clean user handle view */}
+                <div className="text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors truncate">
+                  @{contactData.socials.instagram.split("/").pop()}
+                </div>
               </div>
             </a>
           </div>
         </div>
 
         {/* Right Column: Detailed Application Form */}
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-white dark:bg-[#0D0D0D] p-6 sm:p-10 rounded-3xl border border-zinc-200 dark:border-zinc-800/80 shadow-lg dark:shadow-2xl relative overflow-hidden"
+            className="bg-white dark:bg-[#0D0D0D] p-5 sm:p-10 rounded-3xl border border-zinc-200 dark:border-zinc-800/80 shadow-lg dark:shadow-2xl relative overflow-hidden w-full"
           >
-            {/* Background design accents */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-[#82FF00]/5 rounded-full blur-3xl pointer-events-none" />
 
-            <form onSubmit={handleSubmit} className="space-y-5 relative">
-              <div className="grid sm:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-5 relative w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                   <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
                     Full Name
@@ -159,7 +162,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                   <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
                     WhatsApp Number
@@ -179,15 +182,14 @@ export default function ContactSection() {
                     Select Your Goal
                   </label>
                   
-                  {/* Modern custom select dropdown trigger */}
                   <button
                     type="button"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-50 dark:bg-black/60 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-xs font-medium focus:outline-none focus:border-[#82FF00] focus:ring-1 focus:ring-[#82FF00]/20 transition-all duration-200 text-left cursor-pointer"
                   >
-                    <span>{formData.goal}</span>
+                    <span className="truncate mr-2">{formData.goal}</span>
                     <svg 
-                      className={`w-4 h-4 text-zinc-400 dark:text-zinc-500 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} 
+                      className={`w-4 h-4 text-zinc-400 dark:text-zinc-500 flex-shrink-0 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} 
                       fill="none" 
                       stroke="currentColor" 
                       strokeWidth="2" 
@@ -197,7 +199,6 @@ export default function ContactSection() {
                     </svg>
                   </button>
 
-                  {/* Dropdown Menu Portal overlay close */}
                   {dropdownOpen && (
                     <>
                       <div className="fixed inset-0 z-10" onClick={() => setDropdownOpen(false)} />
@@ -218,7 +219,7 @@ export default function ContactSection() {
                           >
                             <span>{item}</span>
                             {formData.goal === item && (
-                              <Check className="w-3 h-3 text-[#82FF00]" />
+                              <Check className="w-3 h-3 text-[#82FF00] flex-shrink-0" />
                             )}
                           </button>
                         ))}
@@ -238,7 +239,7 @@ export default function ContactSection() {
                   value={formData.objective}
                   onChange={(e) => setFormData({ ...formData, objective: e.target.value })}
                   placeholder="Describe your daily diet, workout obstacles, and exact target bodyweight/milestones..."
-                  className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-black/60 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-xs font-medium placeholder-zinc-400 dark:placeholder-zinc-700 focus:outline-none focus:border-[#82FF00] focus:ring-1 focus:ring-[#82FF00]/20 transition-all duration-200 resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-black/60 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-xs font-medium placeholder-zinc-400 dark:placeholder-zinc-700 focus:outline-none focus:border-[#82FF00] focus:ring-1 focus:ring-[#82FF00]/20 transition-all duration-200 mesh-none resize-none"
                 />
               </div>
 
@@ -246,7 +247,7 @@ export default function ContactSection() {
                 type="submit"
                 className="w-full py-3.5 bg-[#82FF00] text-black font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:bg-[#9fff26] hover:scale-[1.01] text-xs shadow-lg shadow-[#82FF00]/15 flex items-center justify-center gap-2 cursor-pointer"
               >
-              <WhatsAppIcon />
+                <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
                 Send Application via WhatsApp
               </button>
             </form>

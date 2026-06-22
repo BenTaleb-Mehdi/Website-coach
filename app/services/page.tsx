@@ -65,7 +65,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">CLIENT ONBOARDING PATHWAY</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {steps.map((item, index) => (
               <div 
                 key={index} 

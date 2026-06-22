@@ -84,7 +84,7 @@ export default function AboutPage() {
 
             {/* Right Column: Coach Image & KPIs */}
             <div className="space-y-5">
-              <div className="relative rounded-3xl overflow-hidden border-t-2 border-l-2 border-[#82FF00] bg-zinc-900 h-[450px]">
+              <div className="relative rounded-3xl overflow-hidden border-t-2 border-l-2 border-[#82FF00] bg-zinc-900 h-[300px] sm:h-[400px] lg:h-[450px]">
                 <Image
                   src="/images/profile/about-profile.jpg"
                   alt="Coach Saad Bouharrat — premium online fitness coach — Larache Morocco"
@@ -133,7 +133,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white">THE COACHING DOGMA</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {philosophy.map((item, index) => (
               <motion.div
                 key={index}

@@ -108,7 +108,7 @@ export default function Hero() {
         animate="show"
         className="lg:col-span-5 relative flex justify-center z-10"
       >
-        <div className="relative group w-full max-w-[360px] aspect-[4/5] bg-zinc-100 dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl shadow-zinc-200/50 dark:shadow-black/60">
+        <div className="relative group w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] aspect-[4/5] bg-zinc-100 dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl shadow-zinc-200/50 dark:shadow-black/60">
           {/* Neon corner accent */}
           <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-[#82FF00] rounded-tl-3xl z-20 pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-[#82FF00]/40 rounded-br-3xl z-20 pointer-events-none" />
@@ -131,7 +131,7 @@ export default function Hero() {
         </div>
 
         {/* Floating Stat Badge */}
-        <div className="absolute -left-3 top-1/3 bg-[#82FF00] text-black px-4 py-3 rounded-2xl shadow-xl shadow-[#82FF00]/30 z-30">
+        <div className="absolute -left-2 sm:-left-3 top-1/3 bg-[#82FF00] text-black px-3 sm:px-4 py-2 sm:py-3 rounded-2xl shadow-xl shadow-[#82FF00]/30 z-30">
           <div className="text-xl font-black leading-none">1500+</div>
           <div className="text-[8px] font-black uppercase tracking-wider leading-tight mt-0.5">Training Hours</div>
         </div>
