@@ -1,6 +1,7 @@
 // components/BeforeAfterSlider.tsx
 "use client";
 import { useState } from "react";
+import { ArrowLeftRight } from "lucide-react";
 
 interface SliderProps {
   beforeImg: string;
@@ -38,8 +39,8 @@ export default function BeforeAfterSlider({ beforeImg, afterImg, clientName, ach
 
         {/* Custom Neon Divider Bar Line */}
         <div className="absolute top-0 bottom-0 w-[2px] bg-[#82FF00] z-20 pointer-events-none shadow-[0_0_10px_#82FF00]" style={{ left: `${sliderPosition}%` }}>
-          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 bg-white dark:bg-black text-[#82FF00] border-2 border-[#82FF00] rounded-full flex items-center justify-center shadow-2xl font-bold text-xs">
-            ↔
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 bg-white dark:bg-black text-[#82FF00] border-2 border-[#82FF00] rounded-full flex items-center justify-center shadow-2xl">
+            <ArrowLeftRight className="w-3.5 h-3.5" />
           </div>
         </div>
       </div>

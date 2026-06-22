@@ -2,7 +2,7 @@
 import Hero from "./components/sections/Hero";
 import AboutSection from "./components/sections/AboutSection";
 import BeforeAfterSlider from "./components/BeforeAfterSlider";
-import { transformationsData } from "./data/portfolioData";
+import { transformations } from "./data/portfolioData";
 import ContactSection from "./components/sections/ContactSection";
 import ServicesSection from "./components/sections/ServicesSection";
 import Footer from "./components/Footer";
@@ -23,7 +23,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {transformationsData.map((client) => (
+          {transformations.slice(0, 3).map((client) => (
             <BeforeAfterSlider
               key={client.id}
               beforeImg={client.beforeImg}

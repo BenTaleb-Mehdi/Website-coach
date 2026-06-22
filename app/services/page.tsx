@@ -5,6 +5,7 @@ import ServicesSection from "../components/sections/ServicesSection";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 
 export default function ServicesPage() {
   const steps = [
@@ -94,8 +95,8 @@ export default function ServicesPage() {
                     className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
                   >
                     <span className="text-sm font-bold uppercase tracking-wide text-zinc-900 dark:text-zinc-100">{faq.q}</span>
-                    <span className="text-[#82FF00] font-black text-sm ml-4 transition-transform duration-300">
-                      {isOpen ? "−" : "+"}
+                    <span className="text-[#82FF00] ml-4 transition-transform duration-300 flex-shrink-0">
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
                   {isOpen && (

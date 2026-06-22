@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { contactData, siteConfig } from "../../data/portfolioData";
+import { Check, LucidePhoneCall } from "lucide-react";
+import WhatsAppIcon from "../WhatsAppIcon";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -64,19 +66,17 @@ export default function ContactSection() {
           <div className="grid gap-3.5 pt-2">
             {/* Telegram Contact Card */}
             <a 
-              href="https://t.me/coach_amine" 
+              href={`tel:${contactData.phone}`}
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md"
             >
               <div className="w-10 h-10 rounded-xl bg-[#82FF00]/10 flex items-center justify-center text-[#82FF00] font-black flex-shrink-0 group-hover:scale-110 transition-transform">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.37-.49 1.03-.75 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.13-.03.19z"/>
-                </svg>
+               <LucidePhoneCall size={17} className="text-[#82FF00]"/>
               </div>
               <div>
-                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Fast Track Hotline</div>
-                <div className="text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors">Telegram Chat</div>
+                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Call me</div>
+                <div className="text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors">Phone number</div>
               </div>
             </a>
 
@@ -98,7 +98,7 @@ export default function ContactSection() {
 
             {/* Instagram Contact Card */}
             <a 
-              href="https://instagram.com" 
+              href={contactData.socials.instagram} 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-[#82FF00] dark:hover:border-[#82FF00]/50 transition-all duration-300 group shadow-sm dark:shadow-md"
@@ -218,7 +218,7 @@ export default function ContactSection() {
                           >
                             <span>{item}</span>
                             {formData.goal === item && (
-                              <span className="text-[#82FF00] text-[10px]">✓</span>
+                              <Check className="w-3 h-3 text-[#82FF00]" />
                             )}
                           </button>
                         ))}
@@ -246,10 +246,7 @@ export default function ContactSection() {
                 type="submit"
                 className="w-full py-3.5 bg-[#82FF00] text-black font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:bg-[#9fff26] hover:scale-[1.01] text-xs shadow-lg shadow-[#82FF00]/15 flex items-center justify-center gap-2 cursor-pointer"
               >
-                {/* WhatsApp icon */}
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.852.002-2.63-1.023-5.101-2.887-6.968C16.58 1.917 14.1 1.91 11.47 1.91c-5.443 0-9.866 4.421-9.87 9.854 0 1.63.454 3.223 1.317 4.631L1.87 22.051l5.882-1.543c1.4.77 2.8 1.15 4.3 1.15a9.76 9.76 0 00-.012-.016h.007zm12.19-5.321c-.328-.164-1.942-.958-2.242-1.069-.301-.11-.52-.164-.738.164-.219.328-.848 1.069-1.039 1.288-.19.22-.382.246-.71.082-.328-.164-1.386-.511-2.64-1.63-1.054-.94-1.764-2.1-1.97-2.455-.207-.354-.022-.547.142-.71.147-.147.328-.382.492-.574.164-.19.219-.328.328-.547.11-.219.055-.41-.027-.574-.082-.164-.738-1.777-1.011-2.433-.267-.64-.53-.553-.728-.563-.189-.01-.405-.012-.622-.012-.217 0-.57.081-.869.41-.299.329-1.143 1.116-1.143 2.721 0 1.605 1.17 3.155 1.332 3.374.163.22 2.3 3.51 5.571 4.922.779.336 1.386.537 1.86.688.784.248 1.498.213 2.062.129.628-.094 1.943-.793 2.217-1.558.274-.766.274-1.422.192-1.559-.082-.137-.299-.219-.627-.383z"/>
-                </svg>
+              <WhatsAppIcon />
                 Send Application via WhatsApp
               </button>
             </form>

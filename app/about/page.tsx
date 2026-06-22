@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import { Check, Star } from "lucide-react";
 
 export default function AboutPage() {
   // Your original philosophy content - 100% untouched
@@ -68,8 +68,8 @@ export default function AboutPage() {
                 {features.map((feature, idx) => (
                   /* FIXED: Changed text-white to text-zinc-900 dark:text-white */
                   <li key={idx} className="flex items-center gap-3 text-xs md:text-sm font-bold uppercase tracking-wide text-zinc-900 dark:text-white">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#82FF00]/40 bg-[#82FF00]/10 text-[10px] text-[#82FF00]">
-                      ✓
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#82FF00]/40 bg-[#82FF00]/10 text-[#82FF00]">
+                      <Check className="w-3 h-3" />
                     </span>
                     {feature}
                   </li>
@@ -165,8 +165,8 @@ export default function AboutPage() {
                   key={index} 
                   className="p-5 rounded-xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 flex items-center gap-3.5 shadow-sm"
                 >
-                  <span className="w-8 h-8 rounded-lg bg-[#82FF00]/10 flex items-center justify-center text-[#82FF00] font-black text-sm">
-                    ★
+                  <span className="w-8 h-8 rounded-lg bg-[#82FF00]/10 flex items-center justify-center text-[#82FF00]">
+                    <Star className="w-4 h-4 fill-current" />
                   </span>
                   <span className="text-xs font-bold uppercase tracking-wide text-zinc-700 dark:text-zinc-300">{cert}</span>
                 </div>

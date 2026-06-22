@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { navLinks, siteConfig } from "../data/portfolioData";
 import ThemeToggle from "./ThemeToggle";
+import { X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -136,7 +137,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="w-8 h-8 flex items-center justify-center rounded-md border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
             >
-              ✕
+              <X className="w-4 h-4" />
             </button>
           </div>
 

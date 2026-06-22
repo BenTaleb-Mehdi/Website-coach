@@ -1,7 +1,7 @@
 // components/sections/AboutSection.tsx
 "use client";
 import { motion, Variants } from "framer-motion";
-import { siteConfig } from "../../data/portfolioData";
+import { Check } from "lucide-react";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -61,8 +61,8 @@ export default function AboutSection() {
           >
             {checkmarks.map((item, i) => (
               <li key={i} className="flex items-center gap-3 font-semibold text-sm text-zinc-700 dark:text-zinc-300">
-                <span className="flex-shrink-0 w-5 h-5 rounded-md bg-[#82FF00]/10 border border-[#82FF00]/30 flex items-center justify-center text-[#82FF00] font-black text-[10px]">
-                  ✓
+                <span className="flex-shrink-0 w-5 h-5 rounded-md bg-[#82FF00]/10 border border-[#82FF00]/30 flex items-center justify-center text-[#82FF00]">
+                  <Check className="w-3 h-3" />
                 </span>
                 {item}
               </li>

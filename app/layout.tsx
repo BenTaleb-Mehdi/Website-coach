@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./context/ThemeContext";
 import { siteConfig } from "./data/portfolioData";
 import Footer from "./components/Footer";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import ChatBot from "./components/ChatBot";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata = {
   title: `FitCoach | Elite Online Coaching by ${siteConfig.coachName}`,
@@ -17,6 +20,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <Navbar />
           <main className="flex-grow">{children}</main>
+          <FloatingWhatsApp />
+          <ChatBot />
+          <ScrollToTop />
         </ThemeProvider>
             <Footer />
       </body>
