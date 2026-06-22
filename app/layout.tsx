@@ -2,7 +2,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./context/ThemeContext";
-import { siteConfig } from "./data/portfolioData";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import ChatBot from "./components/ChatBot";
@@ -10,8 +9,18 @@ import ScrollToTop from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
-  title: `FitCoach | Elite Online Coaching by ${siteConfig.coachName}`,
-  description: "Premium 1-on-1 fitness coaching tailored for high-performing individuals. Custom splits, nutrition, and precision data tracking.",
+  title: {
+    default: `COACH SAAD BOUHARRAT. | Elite Online Fitness Coach for Professionals`,
+    template: `%s | COACH SAAD BOUHARRAT.`,
+  },
+  description: "1-on-1 data-driven coaching for busy professionals. Custom training splits, precision macro frameworks & weekly check-ins. Transform your body without guessing.",
+  keywords: ["premium online fitness coaching", "elite personal trainer", "body transformation coach", "custom hypertrophy training", "1-on-1 fat loss coaching", "fitness coach Morocco", "personal trainer Larache"],
+  openGraph: {
+    title: `COACH SAAD BOUHARRAT. | Elite Online Fitness Coach`,
+    description: "1-on-1 data-driven coaching for busy professionals. Custom training splits, precision macro frameworks & weekly check-ins.",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

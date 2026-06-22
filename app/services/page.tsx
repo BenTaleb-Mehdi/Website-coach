@@ -1,6 +1,7 @@
 // app/services/page.tsx
 "use client";
 
+import { useEffect } from "react";
 import ServicesSection from "../components/sections/ServicesSection";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
@@ -47,6 +48,10 @@ export default function ServicesPage() {
 
   // Keep track of active FAQ index
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    document.title = "Online Elite Coaching & Hybrid Shred Program | Coach Saad Bouharrat";
+  }, []);
 
   return (
     <div className="bg-background text-zinc-900 dark:text-white min-h-screen pt-20 flex flex-col justify-between">

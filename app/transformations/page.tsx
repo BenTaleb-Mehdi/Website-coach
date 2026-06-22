@@ -1,7 +1,7 @@
 // app/transformations/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
@@ -15,6 +15,10 @@ export default function TransformationsPage() {
   const filteredData = filter === "all" 
     ? transformations 
     : transformations.filter(t => t.category === filter);
+
+  useEffect(() => {
+    document.title = "Before & After Fat Loss Results | Body Recomp Success Stories";
+  }, []);
 
   return (
     <div className="bg-background text-zinc-900 dark:text-white min-h-screen pt-24 pb-12 flex flex-col justify-between">

@@ -1,4 +1,5 @@
 // app/page.tsx
+import type { Metadata } from "next";
 import Hero from "./components/sections/Hero";
 import AboutSection from "./components/sections/AboutSection";
 import BeforeAfterSlider from "./components/BeforeAfterSlider";
@@ -6,6 +7,15 @@ import { transformations } from "./data/portfolioData";
 import ContactSection from "./components/sections/ContactSection";
 import ServicesSection from "./components/sections/ServicesSection";
 import Footer from "./components/Footer";
+
+export const metadata: Metadata = {
+  title: "COACH SAAD BOUHARRAT. | Elite Online Fitness Coach for Professionals",
+  description: "1-on-1 data-driven coaching for busy professionals. Custom training splits, precision macro frameworks & weekly check-ins. Transform your body without guessing.",
+  openGraph: {
+    title: "COACH SAAD BOUHARRAT. | Elite Online Fitness Coach",
+    description: "1-on-1 data-driven coaching for busy professionals. Custom training splits, precision macro frameworks & weekly check-ins.",
+  },
+};
 
 export default function HomePage() {
   return (

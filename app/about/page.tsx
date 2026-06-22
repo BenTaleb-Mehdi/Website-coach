@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
@@ -36,6 +37,10 @@ export default function AboutPage() {
     "Weekly Biomarker Monitoring Metrics",
     "Direct Private Telegram Hotline Access",
   ];
+
+  useEffect(() => {
+    document.title = "Who Is Coach Saad Bouharrat? | 8+ Years | 500+ Transformations";
+  }, []);
 
   return (
     <div className="bg-background text-zinc-900 dark:text-white min-h-screen flex flex-col justify-between pt-15">
@@ -82,7 +87,7 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden border-t-2 border-l-2 border-[#82FF00] bg-zinc-900 h-[450px]">
                 <Image
                   src="/images/profile/about-profile.jpg"
-                  alt="Coach Assaad"
+                  alt="Coach Saad Bouharrat — premium online fitness coach — Larache Morocco"
                   fill
                   priority
                   className="object-cover "

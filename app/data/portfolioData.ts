@@ -1,8 +1,8 @@
 // app/data/portfolioData.ts
 
 export const siteConfig = {
-  coachName: "Coach Saad ",
-  logo: "COACH ASSAAD.",
+  coachName: "Coach saad bouharrat ",
+  logo: "COACH SAAD BOUHARRAT.",
 };
 
 export const navLinks = [
@@ -21,7 +21,7 @@ export const heroData = {
 
 // This was missing and caused your error!
 export const aboutData = {
-  title: "Who Is COACH ASSAAD. ?",
+  title: "Who Is COACH SAAD BOUHARRAT. ?",
   bio: "With over 8 years of certified personal training and nutrition experience, I help busy professionals drop fat, build lean muscle, and turn unsustainable habits into sustainable lifestyles.",
   stats: [
     { value: "500+", label: "Clients Transformed" },
