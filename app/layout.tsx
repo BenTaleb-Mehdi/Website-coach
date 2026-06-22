@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import ChatBot from "./components/ChatBot";
 import ScrollToTop from "./components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: `FitCoach | Elite Online Coaching by ${siteConfig.coachName}`,
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FloatingWhatsApp />
           <ChatBot />
           <ScrollToTop />
+          <Analytics/>
         </ThemeProvider>
             <Footer />
       </body>
