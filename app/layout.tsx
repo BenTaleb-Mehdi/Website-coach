@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./context/ThemeContext";
 import { siteConfig } from "./data/portfolioData";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: `FitCoach | Elite Online Coaching by ${siteConfig.coachName}`,
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main className="flex-grow">{children}</main>
         </ThemeProvider>
+            <Footer />
       </body>
     </html>
   );

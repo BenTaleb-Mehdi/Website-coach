@@ -115,9 +115,9 @@ export default function Hero() {
 
           <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-black via-transparent to-transparent z-10 opacity-70" />
           <img
-            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&auto=format&fit=crop"
+            src="images/profile/hero-profile.jpg"
             alt={`${siteConfig.coachName} Profile`}
-            className="w-full h-full object-cover dark:grayscale dark:contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
+            className="w-full h-full object-cover  group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
           />
           <div className="absolute bottom-5 left-5 right-5 z-20 bg-white/80 dark:bg-black/70 backdrop-blur-md p-3.5 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-[#82FF00] shadow-[0_0_6px_#82FF00] flex-shrink-0 animate-pulse" />

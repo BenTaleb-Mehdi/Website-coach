@@ -8,7 +8,7 @@ export default function ContactPage() {
       <div className="w-full flex-grow flex items-center justify-center">
         <ContactSection />
       </div>
-      <Footer />
+   
     </div>
   );
 }

@@ -1,6 +1,7 @@
 // components/sections/AboutSection.tsx
 "use client";
 import { motion, Variants } from "framer-motion";
+import { siteConfig } from "../../data/portfolioData";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -69,26 +70,31 @@ export default function AboutSection() {
           </motion.ul>
         </div>
 
-        {/* Right Stat Grid */}
-        <div className="lg:col-span-6 grid grid-cols-2 gap-3">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              custom={i} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-              className={`p-6 rounded-2xl flex flex-col justify-between aspect-square transition-all duration-300 hover:scale-[1.02] ${
-                stat.highlight
-                  ? "bg-[#82FF00] text-black shadow-xl shadow-[#82FF00]/15 hover:shadow-[#82FF00]/25"
-                  : "bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm dark:shadow-md"
-              }`}
-            >
-              <div className={`text-3xl md:text-4xl font-black tracking-tight leading-none ${stat.highlight ? "text-black" : "text-zinc-900 dark:text-white"}`}>
-                {stat.value}
-              </div>
-              <div className={`text-[10px] font-bold uppercase tracking-widest leading-snug ${stat.highlight ? "text-black/70" : "text-zinc-500"}`}>
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
+ 
+        <div className="lg:col-span-6 space-y-3">
+       
+
+          {/* Stat Grid */}
+          <div className="grid grid-cols-2 gap-3">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                custom={i + 1} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+                className={`p-4 md:p-5 rounded-2xl flex flex-col justify-between aspect-square transition-all duration-300 hover:scale-[1.02] ${
+                  stat.highlight
+                    ? "bg-[#82FF00] text-black shadow-xl shadow-[#82FF00]/15 hover:shadow-[#82FF00]/25"
+                    : "bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm dark:shadow-md"
+                }`}
+              >
+                <div className={`text-2xl md:text-3xl font-black tracking-tight leading-none ${stat.highlight ? "text-black" : "text-zinc-900 dark:text-white"}`}>
+                  {stat.value}
+                </div>
+                <div className={`text-[9px] font-bold uppercase tracking-widest leading-snug ${stat.highlight ? "text-black/70" : "text-zinc-500"}`}>
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>

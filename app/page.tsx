@@ -39,7 +39,7 @@ export default function HomePage() {
     
       <ServicesSection />
       <ContactSection />
-      <Footer />
+   
     </div>
   );
 }

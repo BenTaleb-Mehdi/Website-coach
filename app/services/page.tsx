@@ -110,7 +110,7 @@ export default function ServicesPage() {
         </section>
       </div>
 
-      <Footer />
+ 
     </div>
   );
 }

@@ -142,7 +142,7 @@ export default function TransformationsPage() {
         </div>
       </div>
 
-      <Footer />
+
     </div>
   );
 }
