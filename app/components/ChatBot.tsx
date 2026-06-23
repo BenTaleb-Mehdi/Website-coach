@@ -10,7 +10,7 @@ interface Message {
 
 const WELCOME_MSG: Message = {
   role: "assistant",
-  content: "Hey! I'm Coach Assaad's AI assistant. Ask me anything about programs, pricing, or fitness tips.",
+  content: "Salut ! Je suis l'assistant IA du Coach Assaad. Posez-moi des questions sur les programmes, les tarifs ou les conseils fitness.",
 };
 
 export default function ChatBot() {
@@ -46,13 +46,13 @@ export default function ChatBot() {
       const data = await res.json();
       const reply: Message = {
         role: "assistant",
-        content: data.response || "Sorry, something went wrong.",
+        content: data.response || "Désolé, une erreur s'est produite.",
       };
       setMessages((prev) => [...prev, reply]);
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Sorry, I couldn't reach the server. Try again later." },
+        { role: "assistant", content: "Désolé, je n'ai pas pu joindre le serveur. Réessayez plus tard." },
       ]);
     } finally {
       setLoading(false);
@@ -72,7 +72,7 @@ export default function ChatBot() {
       <button
         onClick={() => setOpen(!open)}
         className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-[#82FF00] shadow-xl shadow-[#82FF00]/30 flex items-center justify-center text-black hover:scale-110 hover:shadow-[#82FF00]/50 transition-all duration-300"
-        aria-label="Open AI Chat"
+        aria-label="Assistant IA"
       >
         {open ? <X className="w-6 h-6" /> : <Bot className="w-6 h-6" />}
       </button>
@@ -99,8 +99,8 @@ export default function ChatBot() {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-sm font-black uppercase tracking-tight text-zinc-900 dark:text-white">AI Coach</div>
-                <div className="text-[9px] font-bold uppercase tracking-widest text-[#82FF00]">• Online </div>
+                <div className="text-sm font-black uppercase tracking-tight text-zinc-900 dark:text-white">Coach IA</div>
+                <div className="text-[9px] font-bold uppercase tracking-widest text-[#82FF00]">• En Ligne </div>
               </div>
               <button
                 onClick={() => setOpen(false)}
@@ -160,7 +160,7 @@ export default function ChatBot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask anything..."
+                  placeholder="Posez votre question..."
                   className="flex-1 bg-transparent text-xs font-medium text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none"
                 />
                 <button

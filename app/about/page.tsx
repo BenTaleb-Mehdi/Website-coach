@@ -4,42 +4,41 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
+import { aboutData } from "../data/portfolioData";
 
 export default function AboutPage() {
   // Your original philosophy content - 100% untouched
   const philosophy = [
     {
-      title: "Scientific Programming",
-      desc: "Every rep, set, and Rest Time is computed. No guesswork, just pure anatomical adaptation and progressive overload metrics built for your frame.",
+      title: "Programmation Scientifique",
+      desc: "Chaque répétition, série et temps de repos est calculé. Aucune conjecture, juste une adaptation anatomique pure et des metrics de surcharge progressive conçues pour votre morphologie.",
     },
     {
-      title: "Biofeedback Synchronization",
-      desc: "We analyze sleep quality, HRV, stress levels, and digestive biomarkers. When variables stall, we pivot to ensure your endocrine system thrives.",
+      title: "Synchronisation du Biofeedback",
+      desc: "Nous analysons la qualité du sommeil, la VFC, les niveaux de stress et les biomarqueurs digestifs. Quand les variables stagnent, nous pivotons pour que votre système endocrinien prospère.",
     },
     {
-      title: "Sustainable Fuel Layouts",
-      desc: "Rigid diets fail. We design flexible macronutrient protocols that integrate seamlessly with business lunches, client dinners, and travel schedules.",
+      title: "Plans Alimentaires Durables",
+      desc: "Les régimes rigides échouent. Nous concevons des protocoles macro-nutritionnels flexibles qui s'intègrent parfaitement aux déjeuners d'affaires, dîners clients et horaires de voyage.",
     },
   ];
 
-  // Your original certifications content - 100% untouched
   const certifications = [
-    "NASM Certified Personal Trainer",
-    "ISS Nutrition Specialist",
-    "Precision Nutrition Level 1 Coach",
-    "FMS Level 2 Movement Analyst",
+    "Coach Personnel Certifié NASM",
+    "Spécialiste en Nutrition ISS",
+    "Coach Precision Nutrition Niveau 1",
+    "Analyste de Mouvement FMS Niveau 2",
   ];
 
-  // Original features checklist
   const features = [
-    "Premium Dynamic Custom Splits",
-    "Tailored High-Performance Fuel Layouts",
-    "Weekly Biomarker Monitoring Metrics",
-    "Direct Private Telegram Hotline Access",
+    "Fractionnements Dynamiques Premium",
+    "Plans Nutritionnels Haute Performance",
+    "Suivi Hebdomadaire des Biomarqueurs",
+    "Accès Direct Hotline Telegram Privée",
   ];
 
   useEffect(() => {
-    document.title = "Who Is Coach Saad Bouharrat? | 8+ Years | 500+ Transformations";
+    document.title = "Qui Est Coach Saad Bouharrat ? | 8+ Ans | 500+ Transformations";
   }, []);
 
   return (
@@ -54,19 +53,19 @@ export default function AboutPage() {
             <div className="space-y-6 lg:sticky lg:top-28">
               <div className="space-y-2">
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">
-                  The Mindset
+                  La Mentalité
                 </span>
                 {/* FIXED: Changed text-white to text-zinc-900 dark:text-white */}
                 <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white leading-none">
-                  Your Coach, <span className="text-[#82FF00]">Your Ally</span>
+                  Ton Coach, <span className="text-[#82FF00]">Ton Allié</span>
                 </h1>
               </div>
 
               {/* FIXED: Changed text-zinc-300 to text-zinc-600 dark:text-zinc-300 */}
               <p className="text-zinc-600 dark:text-zinc-300 text-sm md:text-base font-medium leading-relaxed max-w-xl">
-                No generalized workout routines or standard generic meal printouts. We
-                program specific anatomical and metabolic strategies custom designed for
-                your physiological breakdown.
+                Pas de routines d'entraînement généralisées ni de plans alimentaires standardisés. Nous
+                programmons des stratégies anatomiques et métaboliques spécifiques, conçues sur mesure pour
+                votre profil physiologique.
               </p>
 
               <ul className="space-y-3.5 pt-2">
@@ -87,14 +86,14 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden border-t-2 border-l-2 border-[#82FF00] bg-zinc-900 h-[300px] sm:h-[400px] lg:h-[450px]">
                 <Image
                   src="/images/profile/about-profile.jpg"
-                  alt="Coach Saad Bouharrat — premium online fitness coach — Larache Morocco"
+                  alt="Coach Saad Bouharrat — coach fitness premium en ligne — Larache Maroc"
                   fill
                   priority
                   className="object-cover "
                 />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/60 backdrop-blur-md border border-zinc-800/50 flex flex-col">
                   <span className="text-[9px] font-black tracking-widest text-[#82FF00] uppercase">
-                    Head Coach
+                    Coach Principal
                   </span>
                   <span className="text-base font-black uppercase tracking-tight text-white">
                     Assaad
@@ -102,24 +101,23 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* KPI Performance Metrics Grid (Stays dark/high-contrast in both modes) */}
+              {/* KPI Performance Metrics Grid */}
               <div className="grid grid-cols-2 gap-5">
-                <div className="p-6 rounded-2xl bg-[#82FF00] text-black flex flex-col justify-between aspect-square lg:aspect-video">
-                  <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase">1500+</span>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest leading-tight text-black/80">Hours Training Sessions</span>
-                </div>
-                <div className="p-6 rounded-2xl bg-[#0D0D0D] border border-zinc-800/80 text-white flex flex-col justify-between aspect-square lg:aspect-video">
-                  <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase">8+</span>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest leading-tight text-zinc-400">Years Active Experience</span>
-                </div>
-                <div className="p-6 rounded-2xl bg-[#0D0D0D] border border-zinc-800/80 text-white flex flex-col justify-between aspect-square lg:aspect-video">
-                  <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase">97%</span>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest leading-tight text-zinc-400">Client Retention Rates</span>
-                </div>
-                <div className="p-6 rounded-2xl bg-[#0D0D0D] border border-zinc-800/80 text-white flex flex-col justify-between aspect-square lg:aspect-video">
-                  <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase">3x</span>
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest leading-tight text-zinc-400">Certified Elite Frameworks</span>
-                </div>
+                {aboutData.stats.map((stat, i) => (
+                  <div
+                    key={i}
+                    className={`p-6 rounded-2xl flex flex-col justify-between aspect-square lg:aspect-video ${
+                      i === 0
+                        ? "bg-[#82FF00] text-black"
+                        : "bg-[#0D0D0D] border border-zinc-800/80 text-white"
+                    }`}
+                  >
+                    <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase">{stat.value}</span>
+                    <span className={`text-[9px] md:text-[10px] font-black uppercase tracking-widest leading-tight ${i === 0 ? "text-black/80" : "text-zinc-400"}`}>
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -129,7 +127,7 @@ export default function AboutPage() {
         {/* Philosophy Section */}
         <section className="px-5 md:px-8 max-w-7xl mx-auto py-16 border-t border-zinc-200 dark:border-zinc-900/60">
           <div className="max-w-3xl mb-12">
-            <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00] mb-2">My Principles</div>
+            <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00] mb-2">Mes Principes</div>
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white">THE COACHING DOGMA</h2>
           </div>
 
@@ -156,11 +154,10 @@ export default function AboutPage() {
         <section className="px-5 md:px-8 max-w-7xl mx-auto py-16 border-t border-zinc-200 dark:border-zinc-900/60 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-3xl mb-16">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-4">
-              <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">Verified Credentials</div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white">EDUCATED TO DEVELOP</h2>
-              {/* FIXED: Changed text-zinc-500 to text-zinc-600 dark:text-zinc-400 */}
+              <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">Diplômes</div>
+              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white">FORMÉ POUR DÉVELOPPER</h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm font-medium leading-relaxed">
-                Elite results demand elite knowledge. I continue to study under top biomechanics experts globally to ensure my clients receive bleeding-edge programming.
+                Des résultats élite exigent des connaissances élite. Je continue d'étudier auprès des meilleurs experts en biomécanique dans le monde pour garantir à mes clients une programmation de pointe.
               </p>
             </div>
             

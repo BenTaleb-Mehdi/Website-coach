@@ -38,7 +38,7 @@ export default function Footer() {
 
         {/* Copyright Text - Enhanced readability */}
         <p className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600 font-bold text-center md:text-right">
-          © {new Date().getFullYear()} {siteConfig.logo.replace('.', '')} • All rights reserved.
+          © {new Date().getFullYear()} {siteConfig.logo.replace('.', '')} • Tous droits réservés.
         </p>
 
       </div>

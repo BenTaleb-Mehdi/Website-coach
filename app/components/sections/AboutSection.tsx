@@ -2,6 +2,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import { Check } from "lucide-react";
+import { aboutData } from "../../data/portfolioData";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -14,18 +15,13 @@ const fadeUp: Variants = {
 
 export default function AboutSection() {
   const checkmarks = [
-    "Premium Dynamic Custom Splits",
-    "Tailored High-Performance Fuel Layouts",
-    "Weekly Biomarker Monitoring Metrics",
-    "Direct Private Telegram Hotline Access",
+    "Fractionnements Dynamiques Premium",
+    "Plans Nutritionnels Haute Performance",
+    "Suivi Hebdomadaire des Biomarqueurs",
+    "Accès Direct Hotline Telegram Privée",
   ];
 
-  const stats = [
-    { value: "1500+", label: "Hours Training Sessions", highlight: true },
-    { value: "8+", label: "Years Active Experience" },
-    { value: "97%", label: "Client Retention Rates" },
-    { value: "3x", label: "Certified Elite Frameworks" },
-  ];
+  const stats = aboutData.stats.map((s, i) => ({ ...s, highlight: i === 0 }));
 
   return (
     <section className="bg-transparent text-zinc-900 dark:text-white px-5 md:px-8 w-full max-w-7xl mx-auto py-16 md:py-20 border-t border-zinc-200 dark:border-zinc-900/60">
@@ -37,22 +33,22 @@ export default function AboutSection() {
             custom={0} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
             className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]"
           >
-            The Mindset
+            La Mentalité
           </motion.div>
           <motion.h2
             custom={1} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
             className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.92]"
           >
-            YOUR COACH,{" "}
+            TON COACH,{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#82FF00] to-[#c8ff6e]">
-              YOUR ALLY
+              TON ALLIÉ
             </span>
           </motion.h2>
           <motion.p
             custom={2} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
             className="text-zinc-600 dark:text-zinc-400 text-sm md:text-base max-w-lg leading-relaxed font-medium"
           >
-            No generalized workout routines or standard generic meal printouts. We program specific anatomical and metabolic strategies custom designed for your physiological breakdown.
+            Pas de routines d'entraînement généralisées ni de plans alimentaires standardisés. Nous programmons des stratégies anatomiques et métaboliques spécifiques, conçues sur mesure pour votre profil physiologique.
           </motion.p>
 
           <motion.ul

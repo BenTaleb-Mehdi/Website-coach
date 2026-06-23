@@ -9,7 +9,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="relative p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/60 text-zinc-800 dark:text-zinc-200 hover:border-[#82FF00] dark:hover:border-[#82FF00] hover:text-[#82FF00] dark:hover:text-[#82FF00] transition-all duration-300 flex items-center justify-center focus:outline-none"
-      aria-label="Toggle Theme"
+      aria-label="Changer le thème"
     >
       {theme === "dark" ? (
         // Sun Icon

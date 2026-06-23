@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import ComingSoonCard from "../components/ComingSoonCard";
 import Footer from "../components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig, transformations } from "../data/portfolioData";
@@ -11,22 +12,22 @@ export default function TransformationsPage() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const tabs = [
-    { id: "all", label: "Show All" },
-    { id: "shred", label: "Fat Loss Focus" },
-    { id: "recomp", label: "Body Recomp" },
-    { id: "bulk", label: "Muscle Gain" },
+    { id: "all", label: "Tout Voir" },
+    { id: "shred", label: "Perte de Gras" },
+    { id: "recomp", label: "Recomposition" },
+    { id: "bulk", label: "Prise de Muscle" },
   ];
 
   const filteredData = filter === "all" 
     ? transformations 
-    : transformations.filter(t => t.category === filter);
+    : transformations.filter(t => t.category === filter && t.status === "published");
 
   useEffect(() => {
-    document.title = "Before & After Fat Loss Results | Body Recomp Success Stories";
+    document.title = "Résultats Avant/Après Perte de Gras | Histoires de Réussite";
   }, []);
 
-  // L-label dyal l-filter li khtarih l-client daba
-  const currentLabel = tabs.find(t => t.id === filter)?.label || "Show All";
+  // Label du filtre sélectionné
+  const currentLabel = tabs.find(t => t.id === filter)?.label || "Tout Voir";
 
   return (
     <div className="bg-background text-zinc-900 dark:text-white min-h-screen pt-24 pb-12 flex flex-col justify-between">
@@ -34,10 +35,10 @@ export default function TransformationsPage() {
         
         {/* Header */}
         <div className="text-center space-y-3 mb-12">
-          <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">VERIFIABLE PROOF</div>
-          <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white">THE CASE STUDIES</h1>
+          <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">PREUVES VÉRIFIABLES</div>
+          <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white">LES RÉSULTATS</h1>
           <p className="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto text-xs sm:text-sm font-medium pt-1">
-            Strict metric tracking combined with dedicated execution. No shortcuts allowed.
+            Suivi strict des metrics combiné à une exécution dédiée. Aucun raccourci permis.
           </p>
         </div>
 
@@ -135,35 +136,44 @@ export default function TransformationsPage() {
               transition={{ duration: 0.3 }}
               className="space-y-4"
             >
-              <BeforeAfterSlider 
-                beforeImg={client.beforeImg}
-                afterImg={client.afterImg}
-                clientName={client.clientName}
-                achievement={client.achievement}
-                duration={client.duration}
-              />
-              
-              {/* Testimonial Quote + Metrics Stats */}
-              <div className="p-5 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 shadow-xs">
-                <p className="text-zinc-600 dark:text-zinc-400 text-xs italic font-medium leading-relaxed mb-4">
-                  "{client.quote}"
-                </p>
-                
-                <div className="grid grid-cols-3 gap-2 border-t border-zinc-100 dark:border-zinc-900/60 pt-3 text-center">
-                  <div>
-                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-bold">Waist</div>
-                    <div className="text-sm font-black mt-0.5 text-zinc-800 dark:text-zinc-200">{client.metrics.waist}</div>
+              {client.status === "comingSoon" ? (
+                <ComingSoonCard
+                  clientName={client.clientName}
+                  achievement={client.achievement}
+                />
+              ) : (
+                <>
+                  <BeforeAfterSlider 
+                    beforeImg={client.beforeImg!}
+                    afterImg={client.afterImg!}
+                    clientName={client.clientName}
+                    achievement={client.achievement}
+                    duration={client.duration}
+                  />
+                  
+                  {/* Testimonial Quote + Metrics Stats */}
+                  <div className="p-5 rounded-2xl bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-800/80 shadow-xs">
+                    <p className="text-zinc-600 dark:text-zinc-400 text-xs italic font-medium leading-relaxed mb-4">
+                      "{client.quote}"
+                    </p>
+                    
+                    <div className="grid grid-cols-3 gap-2 border-t border-zinc-100 dark:border-zinc-900/60 pt-3 text-center">
+                      <div>
+                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-bold">Tour de Taille</div>
+                    <div className="text-sm font-black mt-0.5 text-zinc-800 dark:text-zinc-200">{client.metrics!.waist}</div>
                   </div>
                   <div>
-                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-bold">Fat Loss</div>
-                    <div className="text-sm font-black mt-0.5 text-zinc-800 dark:text-zinc-200">{client.metrics.fatLoss}</div>
+                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-bold">Perte de Gras</div>
+                    <div className="text-sm font-black mt-0.5 text-zinc-800 dark:text-zinc-200">{client.metrics!.fatLoss}</div>
                   </div>
                   <div>
-                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-bold">Lean Gain</div>
-                    <div className="text-sm font-black mt-0.5 text-zinc-800 dark:text-zinc-200">{client.metrics.muscleGain}</div>
+                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-bold">Gain Musculaire</div>
+                        <div className="text-sm font-black mt-0.5 text-zinc-800 dark:text-zinc-200">{client.metrics!.muscleGain}</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </>
+              )}
             </motion.div>
           ))}
         </div>

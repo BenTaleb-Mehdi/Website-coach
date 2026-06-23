@@ -53,9 +53,9 @@ VERIFIED PORTFOLIO DATA (Use this to answer questions):
 - Step 03 (${howWeWorkSteps[2].title}): ${howWeWorkSteps[2].desc}
 
 [SUCCESS STORIES & TRANSFORMATIONS]
-- Client 1: ${transformations[0].clientName} (${transformations[0].duration}) -> ${transformations[0].achievement}. Metrics: Fat Loss: ${transformations[0].metrics.fatLoss}, Muscle Gain: ${transformations[0].metrics.muscleGain}, Waist: ${transformations[0].metrics.waist}.
-- Client 2: ${transformations[1].clientName} (${transformations[1].duration}) -> ${transformations[1].achievement}. Metrics: Fat Loss: ${transformations[1].metrics.fatLoss}, Muscle Gain: ${transformations[1].metrics.muscleGain}, Waist: ${transformations[1].metrics.waist}.
-- Client 3: ${transformations[2].clientName} (${transformations[2].duration}) -> ${transformations[2].achievement}. Metrics: Fat Loss: ${transformations[2].metrics.fatLoss}, Muscle Gain: ${transformations[2].metrics.muscleGain}, Waist: ${transformations[2].metrics.waist}.
+- Client 1: ${transformations[0].clientName} (${transformations[0].duration}) -> ${transformations[0].achievement}. Metrics: Fat Loss: ${transformations[0].metrics!.fatLoss}, Muscle Gain: ${transformations[0].metrics!.muscleGain}, Waist: ${transformations[0].metrics!.waist}.
+- Client 2: ${transformations[1].clientName} (${transformations[1].duration}) -> ${transformations[1].achievement}. Metrics: Fat Loss: ${transformations[1].metrics!.fatLoss}, Muscle Gain: ${transformations[1].metrics!.muscleGain}, Waist: ${transformations[1].metrics!.waist}.
+- Client 3: ${transformations[2].clientName} (${transformations[2].duration}) -> ${transformations[2].achievement}. Metrics: Fat Loss: ${transformations[2].metrics!.fatLoss}, Muscle Gain: ${transformations[2].metrics!.muscleGain}, Waist: ${transformations[2].metrics!.waist}.
 
 [CONTACT CHANNELS]
 - Email: ${contactData.email}
@@ -64,7 +64,7 @@ VERIFIED PORTFOLIO DATA (Use this to answer questions):
 
 export async function POST(req: Request) {
   if (!GEMINI_API_KEY) {
-    return NextResponse.json({ response: "API key not configured. Please set GEMINI_API_KEY in .env.local." }, { status: 200 });
+    return NextResponse.json({ response: "Clé API non configurée. Veuillez définir GEMINI_API_KEY dans .env.local." }, { status: 200 });
   }
 
   try {
@@ -93,14 +93,14 @@ export async function POST(req: Request) {
 
     if (!res.ok) {
       const err = await res.text();
-      return NextResponse.json({ response: `API error: ${err}` }, { status: 200 });
+      return NextResponse.json({ response: `Erreur API : ${err}` }, { status: 200 });
     }
 
     const data = await res.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't process that.";
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Désolé, je n'ai pas pu traiter votre demande.";
 
     return NextResponse.json({ response: text });
   } catch (e) {
-    return NextResponse.json({ response: `Server error: ${e instanceof Error ? e.message : "Unknown"}` }, { status: 200 });
+    return NextResponse.json({ response: `Erreur serveur : ${e instanceof Error ? e.message : "Inconnue"}` }, { status: 200 });
   }
 }

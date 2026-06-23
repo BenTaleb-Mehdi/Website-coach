@@ -18,7 +18,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      aria-label="Scroll to top"
+      aria-label="Remonter en haut"
       className={`fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-black shadow-xl flex items-center justify-center hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-all duration-300 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}

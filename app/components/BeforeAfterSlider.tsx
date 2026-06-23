@@ -18,16 +18,16 @@ export default function BeforeAfterSlider({ beforeImg, afterImg, clientName, ach
     <div className="bg-white dark:bg-[#0D0D0D] border border-zinc-200 dark:border-zinc-900 rounded-2xl overflow-hidden p-4 w-full mx-auto shadow-lg dark:shadow-2xl hover:border-zinc-300 dark:hover:border-zinc-800 transition-colors duration-300">
       <div className="relative h-[440px] w-full select-none rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-950">
         {/* After View */}
-        <img src={afterImg} alt={`${clientName} — ${achievement} — after result — Coach Saad Bouharrat`} className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute top-4 right-4 bg-[#82FF00] text-black text-[10px] font-black uppercase px-2.5 py-1 rounded tracking-widest z-10">AFTER</div>
+        <img src={afterImg} alt={`${clientName} — ${achievement} — résultat après — Coach Saad Bouharrat`} className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute top-4 right-4 bg-[#82FF00] text-black text-[10px] font-black uppercase px-2.5 py-1 rounded tracking-widest z-10">APRÈS</div>
 
         {/* Before View Overlaid */}
         <div 
           className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
         >
-          <img src={beforeImg} alt={`${clientName} — ${achievement} — before entry — Coach Saad Bouharrat`} className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute top-4 left-4 bg-white/90 dark:bg-zinc-900/90 text-zinc-900 dark:text-white text-[10px] font-black uppercase px-2.5 py-1 rounded tracking-widest border border-zinc-200 dark:border-zinc-800 z-10">BEFORE</div>
+          <img src={beforeImg} alt={`${clientName} — ${achievement} — entrée avant — Coach Saad Bouharrat`} className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute top-4 left-4 bg-white/90 dark:bg-zinc-900/90 text-zinc-900 dark:text-white text-[10px] font-black uppercase px-2.5 py-1 rounded tracking-widest border border-zinc-200 dark:border-zinc-800 z-10">AVANT</div>
         </div>
 
         {/* Input Interactive Range Track */}

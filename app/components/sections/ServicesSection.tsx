@@ -9,7 +9,7 @@ export default function ServicesSection() {
   const cleanPhone = contactData.phone.replace(/[^0-9]/g, "");
 
   const handleWhatsAppRedirect = (programTitle: string) => {
-    const message = `Hello ${siteConfig.coachName}, I am interested in the "${programTitle}" program. Can we discuss how to get started?`;
+    const message = `Bonjour ${siteConfig.coachName}, je suis intéressé par le programme "${programTitle}". Pouvons-nous discuter pour commencer ?`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
@@ -20,10 +20,10 @@ export default function ServicesSection() {
       {/* Section Header */}
       <div className="text-center space-y-2 mb-12">
         <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">
-          Elite Programs
+          Programmes Élite
         </div>
         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
-          CHOOSE YOUR ROADMAP
+          CHOISISSEZ VOTRE PARCOURS
         </h2>
         <div className="w-10 h-[2px] bg-[#82FF00] mx-auto mt-3 rounded-full shadow-[0_0_8px_#82FF00]" />
       </div>
@@ -48,7 +48,7 @@ export default function ServicesSection() {
                 </h3>
                 {index === 1 && (
                   <span className="flex-shrink-0 text-[9px] font-black uppercase tracking-widest px-2 py-1 bg-[#82FF00] text-black rounded-full">
-                    Popular
+                    Populaire
                   </span>
                 )}
               </div>
@@ -71,7 +71,7 @@ export default function ServicesSection() {
               className="relative mt-7 w-full py-3.5 flex items-center justify-center gap-2 rounded-xl font-black uppercase tracking-widest bg-zinc-900 text-white dark:bg-zinc-800/85 hover:bg-[#82FF00] hover:text-black dark:hover:bg-[#82FF00] dark:hover:text-black transition-all duration-300 text-[11px] border border-zinc-800 hover:border-transparent hover:shadow-lg hover:shadow-[#82FF00]/20 cursor-pointer"
             >
               <WhatsAppIcon />
-              Discuss on WhatsApp
+              Discuter sur WhatsApp
             </button>
           </motion.div>
         ))}

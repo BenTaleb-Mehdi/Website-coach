@@ -4,11 +4,11 @@ import ContactSection from "../components/sections/ContactSection";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Apply for Elite Coaching",
-  description: "Ready to transform? Submit your application for premium 1-on-1 coaching. Coach Saad Bouharrat reviews every submission within 24 hours.",
+  title: "Postuler au Coaching Élite",
+  description: "Prêt à vous transformer ? Soumettez votre candidature pour un coaching premium 1-on-1. Coach Saad Bouharrat examine chaque soumission sous 24 heures.",
   openGraph: {
-    title: "Apply for Elite Coaching | COACH SAAD BOUHARRAT.",
-    description: "Ready to transform? Submit your application for premium 1-on-1 coaching. Coach Saad Bouharrat reviews every submission within 24 hours.",
+    title: "Postuler au Coaching Élite | COACH SAAD BOUHARRAT.",
+    description: "Prêt à vous transformer ? Soumettez votre candidature pour un coaching premium 1-on-1. Coach Saad Bouharrat examine chaque soumission sous 24 heures.",
   },
 };
 

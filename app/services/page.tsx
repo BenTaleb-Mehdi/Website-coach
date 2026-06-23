@@ -12,45 +12,44 @@ export default function ServicesPage() {
   const steps = [
     {
       step: "01",
-      title: "Comprehensive Audit",
-      desc: "Complete an in-depth biomarker, lifestyle, injury history, and dietary assessment questionnaire.",
+      title: "Audit Complet",
+      desc: "Remplissez un questionnaire approfondi sur vos biomarqueurs, votre mode de vie, vos antécédents de blessures et votre alimentation.",
     },
     {
       step: "02",
-      title: "Custom Construction",
-      desc: "Receive your tailored mechanical workout splits and biofeedback tracking metrics directly in our app.",
+      title: "Construction Sur Mesure",
+      desc: "Recevez vos programmes d'entraînement mécaniques personnalisés et vos metrics de suivi biofeedback directement dans notre application.",
     },
     {
       step: "03",
-      title: "Weekly Optimization",
-      desc: "Upload bi-weekly check-in videos. We analyze variables (digestion, sleep, load) and adjust variables instantly.",
+      title: "Optimisation Hebdomadaire",
+      desc: "Téléchargez des vidéos de check-in bimensuelles. Nous analysons les variables (digestion, sommeil, charge) et ajustons instantanément.",
     },
   ];
 
   const faqs = [
     {
-      q: "Who is this coaching program for?",
-      a: "This is designed for busy professionals, entrepreneurs, and athletes who want custom, science-backed programming to optimize body composition and energy without wasting hours in the gym.",
+      q: "À qui s'adresse ce programme de coaching ?",
+      a: "Il est conçu pour les professionnels occupés, les entrepreneurs et les athlètes qui souhaitent une programmation personnalisée et basée sur la science pour optimiser leur composition corporelle et leur énergie sans perdre des heures à la salle.",
     },
     {
-      q: "Do I need a fully equipped commercial gym?",
-      a: "No. I program according to your environment. Whether you train in a commercial gym, a minimalist home gym, or hotel gyms while traveling, your plan will be optimized for your gear.",
+      q: "Ai-je besoin d'une salle de sport équipée ?",
+      a: "Non. Je programme selon votre environnement. Que vous vous entraîniez dans une salle commerciale, une salle à domicile minimaliste ou une salle d'hôtel en voyage, votre plan sera optimisé pour votre équipement.",
     },
     {
-      q: "How do weekly video check-ins work?",
-      a: "Every weekend, you submit your performance logs, biofeedback data, and brief movement videos. I record a personalized video response reviewing form, auditing metrics, and defining target updates.",
+      q: "Comment fonctionnent les check-ins vidéo hebdomadaires ?",
+      a: "Chaque week-end, vous soumettez vos logs de performance, données de biofeedback et courtes vidéos de mouvement. J'enregistre une réponse vidéo personnalisée pour analyser la forme, auditer les metrics et définir les ajustements.",
     },
     {
-      q: "Is there a minimum commitment period?",
-      a: "I recommend at least 12 weeks to see true physiological adaptation. However, coaching is billed monthly and you can pause or cancel at any time with a 7-day notice.",
+      q: "Y a-t-il une période d'engagement minimum ?",
+      a: "Je recommande au moins 12 semaines pour une véritable adaptation physiologique. Cependant, le coaching est facturé mensuellement et vous pouvez suspendre ou annuler à tout moment avec un préavis de 7 jours.",
     },
   ];
 
-  // Keep track of active FAQ index
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = "Online Elite Coaching & Hybrid Shred Program | Coach Saad Bouharrat";
+    document.title = "Coaching Élite en Ligne & Programme Hybride | Coach Saad Bouharrat";
   }, []);
 
   return (
@@ -61,8 +60,8 @@ export default function ServicesPage() {
         {/* Onboarding Timeline Section */}
         <section className="px-5 md:px-8 max-w-7xl mx-auto py-16 border-t border-zinc-200 dark:border-zinc-900/60">
           <div className="max-w-3xl mb-12">
-            <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00] mb-2">The Blueprint</div>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">CLIENT ONBOARDING PATHWAY</h2>
+            <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00] mb-2">Le Plan</div>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">PARCOURS D'INTÉGRATION</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -82,8 +81,8 @@ export default function ServicesPage() {
         {/* FAQs Accordion */}
         <section className="px-5 md:px-8 max-w-4xl mx-auto py-16 border-t border-zinc-200 dark:border-zinc-900/60 mb-16">
           <div className="text-center space-y-2 mb-10">
-            <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">Answers</div>
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">FREQUENTLY ASKED</h2>
+            <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">Réponses</div>
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">FOIRE AUX QUESTIONS</h2>
             <div className="w-10 h-[2px] bg-[#82FF00] mx-auto mt-3 rounded-full shadow-[0_0_8px_#82FF00]" />
           </div>
 

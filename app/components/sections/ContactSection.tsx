@@ -10,18 +10,18 @@ export default function ContactSection() {
     name: "",
     email: "",
     phone: "",
-    goal: "Lose Weight / Fat Loss",
+    goal: "Perte de Poids / Gras",
     objective: "",
   });
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const goals = [
-    "Lose Weight / Fat Loss",
-    "Build Muscle / Hypertrophy",
-    "Body Recomposition / Tone",
-    "Improve Strength & Stamina",
-    "Custom General Fitness",
+    "Perte de Poids / Gras",
+    "Prise de Muscle / Hypertrophie",
+    "Recomposition Corporelle / Tonus",
+    "Amélioration Force & Endurance",
+    "Fitness Général Personnalisé",
   ];
 
   const cleanPhone = contactData.phone.replace(/[^0-9]/g, "");
@@ -29,12 +29,12 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const message = `Hello ${siteConfig.coachName}! I want to join the team. Here are my application details:\n\n` +
-      `• Name: ${formData.name}\n` +
-      `• Email: ${formData.email}\n` +
-      `• WhatsApp Phone: ${formData.phone}\n` +
-      `• Selected Goal: ${formData.goal}\n` +
-      `• Objectives & Barriers: ${formData.objective}`;
+    const message = `Bonjour ${siteConfig.coachName} ! Je souhaite rejoindre l'équipe. Voici les détails de ma candidature :\n\n` +
+      `• Nom : ${formData.name}\n` +
+      `• Email : ${formData.email}\n` +
+      `• WhatsApp : ${formData.phone}\n` +
+      `• Objectif : ${formData.goal}\n` +
+      `• Objectifs & Obstacles : ${formData.objective}`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
@@ -50,13 +50,13 @@ export default function ContactSection() {
         <div className="lg:col-span-5 space-y-6 w-full">
           <div className="space-y-2">
             <div className="text-[10px] font-black uppercase tracking-widest text-[#82FF00]">
-              Application Portal
+              Portail de Candidature
             </div>
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none">
-              READY TO <br />COMMENCE?
+              PRÊT À <br />COMMENCER ?
             </h2>
             <p className="text-zinc-500 dark:text-zinc-400 text-sm font-medium leading-relaxed max-w-md">
-              I review all submissions personally within 24 hours. Serious applications only. Let's build your physical legacy.
+              J'examine personnellement toutes les candidatures sous 24 heures. Candidatures sérieuses uniquement. Construisons votre héritage physique.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function ContactSection() {
                <LucidePhoneCall size={17} className="text-[#82FF00]"/>
               </div>
               <div className="min-w-0 flex-1">
-                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Call me direct</div>
+                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Appelez-moi</div>
                 {/* FIXED: Replaced static text with actual phone layout */}
                 <div className="text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors truncate">
                   {contactData.phone}
@@ -89,7 +89,7 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div className="min-w-0 flex-1">
-                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Send Direct Query</div>
+                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Envoyer un Message</div>
                 {/* FIXED: Added break-all to avoid layout breakage on tiny screens */}
                 <div className="text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors break-all">
                   {contactData.email}
@@ -111,7 +111,7 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div className="min-w-0 flex-1">
-                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Follow Updates</div>
+                <div className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest">Suivez les Mises à Jour</div>
                 {/* FIXED: Replaced raw long URL layout text with clean user handle view */}
                 <div className="text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-[#82FF00] transition-colors truncate">
                   @{contactData.socials.instagram.split("/").pop()}
@@ -136,20 +136,20 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                   <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-                    Full Name
+                    Nom Complet
                   </label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g., Youssef"
+                    placeholder="ex: Youssef"
                     className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-black/60 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-xs font-medium placeholder-zinc-400 dark:placeholder-zinc-700 focus:outline-none focus:border-[#82FF00] focus:ring-1 focus:ring-[#82FF00]/20 transition-all duration-200"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-                    Email Address
+                    Adresse Email
                   </label>
                   <input
                     type="email"
@@ -165,21 +165,21 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                   <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-                    WhatsApp Number
+                    Numéro WhatsApp
                   </label>
                   <input
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="e.g., +212 612-345678"
+                    placeholder="ex: +212 612-345678"
                     className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-black/60 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-xs font-medium placeholder-zinc-400 dark:placeholder-zinc-700 focus:outline-none focus:border-[#82FF00] focus:ring-1 focus:ring-[#82FF00]/20 transition-all duration-200"
                   />
                 </div>
                 
                 <div className="space-y-1.5 relative">
                   <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-                    Select Your Goal
+                    Choisissez Votre Objectif
                   </label>
                   
                   <button
@@ -231,14 +231,14 @@ export default function ContactSection() {
 
               <div className="space-y-1.5">
                 <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-                  Objectives & Barriers
+                  Objectifs & Obstacles
                 </label>
                 <textarea
                   rows={4}
                   required
                   value={formData.objective}
                   onChange={(e) => setFormData({ ...formData, objective: e.target.value })}
-                  placeholder="Describe your daily diet, workout obstacles, and exact target bodyweight/milestones..."
+                  placeholder="Décrivez votre alimentation quotidienne, vos obstacles d'entraînement et votre poids objectif / jalons..."
                   className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-black/60 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white text-xs font-medium placeholder-zinc-400 dark:placeholder-zinc-700 focus:outline-none focus:border-[#82FF00] focus:ring-1 focus:ring-[#82FF00]/20 transition-all duration-200 mesh-none resize-none"
                 />
               </div>
@@ -248,7 +248,7 @@ export default function ContactSection() {
                 className="w-full py-3.5 bg-[#82FF00] text-black font-black uppercase tracking-widest rounded-xl transition-all duration-300 hover:bg-[#9fff26] hover:scale-[1.01] text-xs shadow-lg shadow-[#82FF00]/15 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
-                Send Application via WhatsApp
+                Envoyer la Candidature via WhatsApp
               </button>
             </form>
           </motion.div>

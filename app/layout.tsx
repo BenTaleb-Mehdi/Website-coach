@@ -10,22 +10,22 @@ import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: {
-    default: `COACH SAAD BOUHARRAT. | Elite Online Fitness Coach for Professionals`,
+    default: `COACH SAAD BOUHARRAT. | Coach Fitness Élite en Ligne`,
     template: `%s | COACH SAAD BOUHARRAT.`,
   },
-  description: "1-on-1 data-driven coaching for busy professionals. Custom training splits, precision macro frameworks & weekly check-ins. Transform your body without guessing.",
-  keywords: ["premium online fitness coaching", "elite personal trainer", "body transformation coach", "custom hypertrophy training", "1-on-1 fat loss coaching", "fitness coach Morocco", "personal trainer Larache"],
+  description: "Coaching 1-on-1 basé sur les données pour les professionnels occupés. Programmes d'entraînement personnalisés, frameworks macro de précision & check-ins hebdomadaires. Transformez votre corps sans conjectures.",
+  keywords: ["coaching fitness premium en ligne", "coach personnel élite", "coach transformation corporelle", "programme hypertrophy sur mesure", "coaching perte de gras 1-on-1", "coach fitness Maroc", "coach personnel Larache"],
   openGraph: {
-    title: `COACH SAAD BOUHARRAT. | Elite Online Fitness Coach`,
-    description: "1-on-1 data-driven coaching for busy professionals. Custom training splits, precision macro frameworks & weekly check-ins.",
-    locale: "en_US",
+    title: `COACH SAAD BOUHARRAT. | Coach Fitness Élite en Ligne`,
+    description: "Coaching 1-on-1 basé sur les données pour les professionnels occupés. Programmes d'entraînement personnalisés, frameworks macro de précision & check-ins hebdomadaires.",
+    locale: "fr_FR",
     type: "website",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className="bg-background text-foreground min-h-screen flex flex-col antialiased">
         <ThemeProvider>
           <Navbar />

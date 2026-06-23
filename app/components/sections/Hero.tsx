@@ -2,7 +2,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { siteConfig } from "../../data/portfolioData";
+import { siteConfig, aboutData } from "../../data/portfolioData";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -31,7 +31,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50 px-3.5 py-1.5 rounded-full text-[10px] font-black tracking-widest text-zinc-600 dark:text-zinc-400 uppercase"
         >
           <span className="w-2 h-2 rounded-full bg-[#82FF00] animate-pulse shadow-[0_0_6px_#82FF00]" />
-          Elite Online Coaching
+          Coaching Élite en Ligne
         </motion.div>
 
         <motion.h1
@@ -41,10 +41,10 @@ export default function Hero() {
           animate="show"
           className="text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white leading-[0.92]"
         >
-          MASTER YOUR <br />
-          BODY WITH <br />
+          MAÎTRISEZ VOTRE <br />
+          CORPS AVEC DES <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#82FF00] to-[#c8ff6e]">
-            PRECISION DATA
+            DONNÉES PRÉCISES
           </span>
         </motion.h1>
 
@@ -55,7 +55,7 @@ export default function Hero() {
           animate="show"
           className="text-zinc-600 dark:text-zinc-400 max-w-lg text-sm md:text-base font-medium leading-relaxed"
         >
-          An ultra-customized programming infrastructure built strictly for high-performing individuals who refuse to settle for average results.
+          Une infrastructure de programmation ultra-personnalisée, conçue exclusivement pour les individus à haute performance qui refusent de se contenter de résultats moyens.
         </motion.p>
 
         <motion.div
@@ -69,13 +69,13 @@ export default function Hero() {
             href="/contact"
             className="px-7 py-3.5 bg-[#82FF00] text-black font-black uppercase tracking-wider text-xs rounded-full hover:bg-[#9fff26] hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-[#82FF00]/25"
           >
-            Join The Team
+            Rejoindre l'Équipe
           </Link>
           <Link
             href="/transformations"
             className="px-7 py-3.5 border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900/30 text-zinc-800 dark:text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-200"
           >
-            View Case Studies
+            Voir les Résultats
           </Link>
         </motion.div>
 
@@ -87,13 +87,9 @@ export default function Hero() {
           animate="show"
           className="grid grid-cols-3 gap-4 pt-8 border-t border-zinc-200 dark:border-zinc-900 max-w-md"
         >
-          {[
-            { val: "200+", label: "Elite Clients" },
-            { val: "8+", label: "Years Coaching" },
-            { val: "97%", label: "Success Rate" },
-          ].map((s) => (
-            <div key={s.val}>
-              <div className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-white">{s.val}</div>
+          {aboutData.stats.map((s) => (
+            <div key={s.value}>
+              <div className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-white">{s.value}</div>
               <div className="text-[10px] text-zinc-500 dark:text-zinc-500 uppercase tracking-widest mt-1 font-bold">{s.label}</div>
             </div>
           ))}
@@ -116,13 +112,13 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-black via-transparent to-transparent z-10 opacity-70" />
           <img
             src="images/profile/hero-profile.jpg"
-            alt={`${siteConfig.coachName} Profile`}
+            alt={`Profil ${siteConfig.coachName}`}
             className="w-full h-full object-cover  group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
           />
           <div className="absolute bottom-5 left-5 right-5 z-20 bg-white/80 dark:bg-black/70 backdrop-blur-md p-3.5 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-[#82FF00] shadow-[0_0_6px_#82FF00] flex-shrink-0 animate-pulse" />
             <div>
-              <div className="text-[9px] text-[#82FF00] uppercase font-black tracking-widest">Head Coach</div>
+              <div className="text-[9px] text-[#82FF00] uppercase font-black tracking-widest">Coach Principal</div>
               <div className="text-sm font-black uppercase text-zinc-900 dark:text-white mt-0.5">
                 {siteConfig.coachName.replace("Coach ", "")}
               </div>
@@ -133,7 +129,7 @@ export default function Hero() {
         {/* Floating Stat Badge */}
         <div className="absolute -left-2 sm:-left-3 top-1/3 bg-[#82FF00] text-black px-3 sm:px-4 py-2 sm:py-3 rounded-2xl shadow-xl shadow-[#82FF00]/30 z-30">
           <div className="text-xl font-black leading-none">1500+</div>
-          <div className="text-[8px] font-black uppercase tracking-wider leading-tight mt-0.5">Training Hours</div>
+          <div className="text-[8px] font-black uppercase tracking-wider leading-tight mt-0.5">Heures de Coaching</div>
         </div>
       </motion.div>
     </section>

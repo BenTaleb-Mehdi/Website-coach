@@ -83,13 +83,13 @@ export default function Navbar() {
               href="/contact"
               className="hidden md:inline-flex items-center px-5 py-2 bg-[#82FF00] text-black text-[11px] font-black uppercase tracking-wider rounded-full hover:bg-[#9fff26] hover:scale-105 transition-all duration-200 shadow-lg shadow-[#82FF00]/20"
             >
-              Apply Now
+              Postuler
             </Link>
 
             {/* Hamburger Button */}
             <button
               onClick={() => setMenuOpen((prev) => !prev)}
-              aria-label="Toggle menu"
+              aria-label="Menu"
               className="md:hidden relative w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-md border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 text-zinc-900 dark:text-white hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
             >
               <span
@@ -132,7 +132,7 @@ export default function Navbar() {
         >
           {/* Panel Header */}
           <div className="flex items-center justify-between px-6 h-16 border-b border-zinc-200 dark:border-zinc-800">
-            <span className="text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Menu</span>
+            <span className="text-sm font-black uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Navigation</span>
             <button
               onClick={() => setMenuOpen(false)}
               className="w-8 h-8 flex items-center justify-center rounded-md border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
@@ -171,7 +171,7 @@ export default function Navbar() {
               href="/contact"
               className="block w-full py-3.5 bg-[#82FF00] text-black text-center font-black uppercase tracking-widest rounded-xl text-sm hover:bg-[#9fff26] transition-colors shadow-lg shadow-[#82FF00]/20"
             >
-              Apply Now
+              Postuler
             </Link>
           </div>
         </div>
