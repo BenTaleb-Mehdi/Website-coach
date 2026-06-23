@@ -88,6 +88,38 @@ export const transformations: Transformation[] = [
   {
     id: "2",
     clientName: "Prochain Client",
+    duration: "24 Semaines",
+    achievement: "Gain de Muscle & Recomposition Corporelle",
+    category: "recomp",
+    beforeImg: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=500&auto=format&fit=crop",
+    afterImg: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=500&auto=format&fit=crop",
+    quote: "Très structuré. Le suivi a résolu mes années de baisse d'énergie et de mauvaise qualité de sommeil.",
+    metrics: {
+      fatLoss: "-4.5 kg",
+      muscleGain: "+4.2 kg",
+      waist: "-6.5 cm",
+    },
+    status: "comingSoon"
+  },
+  {
+    id: "3",
+    clientName: "Prochain Client",
+    duration: "16 Semaines",
+    achievement: "Prise de Masse & Hypertrophie",
+    category: "prise de masse",
+    beforeImg: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=500&auto=format&fit=crop",
+    afterImg: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&auto=format&fit=crop",
+    quote: "Une programmation précise qui m'a fait franchir un palier de 3 ans de stagnation.",
+    metrics: {
+      fatLoss: "+1.2 kg",
+      muscleGain: "+6.5 kg",
+      waist: "+1.5 cm",
+    },
+    status: "comingSoon"
+  },
+  {
+    id: "4",
+    clientName: "Prochain Client",
     achievement: "Nouvelle transformation à venir",
     category: "recomp",
     status: "comingSoon"
