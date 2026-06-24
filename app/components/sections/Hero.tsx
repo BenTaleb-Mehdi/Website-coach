@@ -111,7 +111,7 @@ export default function Hero() {
 
           <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-black via-transparent to-transparent z-10 opacity-70" />
           <img
-            src="images/profile/hero-profile.jpg"
+            src="images/hero.jpeg"
             alt={`Profil ${siteConfig.coachName}`}
             className="w-full h-full object-cover  group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700"
           />
